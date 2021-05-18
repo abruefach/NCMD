@@ -6,7 +6,14 @@ def create_scene(atoms1, atoms2, distance, iterations):
     multiple times to get a final scene with many structures.
     Parameters:
     Accepts:
+    atoms1        (Atoms Object) First atoms object. Can be an individual item or scene.
+    atoms2        (Atoms Object) Second atoms object. Can be an individual item or scene.
+                         Will iteratively attach this object to the first based on distance
+                         and iterations inputs
+    distance      (int) Minimum distance that atoms1 and atoms2 objects will be placed.
+    iterations    (int) Number of iterations to perform
     Returns:
+    scene         (Atoms Object) Final scene
     """
     for i in range(iterations):
         if i == 0:
