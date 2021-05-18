@@ -57,12 +57,11 @@ def get_radial_distance(atoms, bins = 100):
 
 def get_integrated_rd(comp, bins, return_fig = False):
     """
-    Returns integrated radial distances over all components in
-    a list of components.
+    Returns integrated radial distances over all components in a list of components.
     
     Useful when trying to break component sizes up by dimension or size to determine
-    if there is a difference in radial distances. Otherwise, the same as get_rd if
-    run on all of the components within a frame
+    if there is a difference in radial distances. Otherwise, the same as get_radial_distance 
+    if run on all of the components within a frame
     
     Parameters
     Accepts:
@@ -71,6 +70,8 @@ def get_integrated_rd(comp, bins, return_fig = False):
     bins           (int, array) desired bins as described in np.histogram
     return_fig
     Returns:
+    normalized_counts
+    
     """
     counter = 0
     for dim, components in comp.items():
@@ -97,9 +98,11 @@ def get_cluster_sizes(comp):
     Returns a nd.array of cluster sizes based on the components isolated.
     Parameters
     Accepts:
+    comp          (collections.defaultdict) A collection of atoms objects isolated
+                         from the reaction cell
     
     Returns:
-    
+    cluster_sizes (nd.array) Cluster sizes of input components
     """
     v = [(k, len(v)) for k, v in sorted(comp.items())]
     cluster_sizes = np.zeros([v[0][1],1])
@@ -108,4 +111,4 @@ def get_cluster_sizes(comp):
         for atoms in components:
             cluster_sizes[iter, 0] = len(atoms.positions)
             iter += 1
-    return(cluster_sizes)
+    return cluster_sizes
