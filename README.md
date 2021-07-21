@@ -3,7 +3,7 @@
 
 This is an interactive tutorial for demonstrating molecular dynamics of nanocluster systems using Langevin Dynamics in python. We implement methods from Atomic Simulation Environment (ASE) and As Soon As Possible (ASAP). 
 
-The growth process is modelled from stage II to III of the LaMer Curve (1). We make the simlification that the system is in equilibrium, thus allowing us to use simple dynamics to simulate the growth. While not entirely accurate, this model can give us insights on how nuclei form in solution.
+The growth process is modelled from stage II to III of the LaMer Curve (1). We make the simplification that the system is in equilibrium, thus allowing us to use simple dynamics to simulate the growth. While not entirely accurate, this model can give us insights on how nuclei form in solution.
 
 ## Simulation Details
 
